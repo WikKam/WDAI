@@ -1,0 +1,20 @@
+<form [formGroup]="searchForm" (keyup)="onKeyUp()">
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+      
+        <label>
+          ECTS:
+          <input type="text" formControlName="ECTS">
+        </label>
+        <label>
+         Semester:
+         <input type="text" formControlName="semester">
+        </label>
+            
+        <label>
+        Max student no:
+        <input type="text" formControlName="maxStudentsNo">
+        </label>
+</form>

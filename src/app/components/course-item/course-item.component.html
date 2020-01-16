@@ -1,0 +1,10 @@
+<div [ngClass] = "setClass()" >
+<div id = 'container'>
+<div id = 'item1'><img [src] =  "course.icon"></div>
+<div id = 'item2'><h1>{{course.name}}</h1></div>
+<div id = 'item3'><button id = 'del' (click) = "onDelete(course)">x</button></div>
+</div>
+<!--<app-course-details [details] = "course">
+</app-course-details>-->
+<a (click) = "onSelect(course)">Details</a>
+</div>

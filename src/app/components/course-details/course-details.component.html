@@ -1,0 +1,24 @@
+
+<div >
+        <p>
+            Name: {{details.name}}
+            ECTS: {{details.ECTS}}
+            Rating: {{details.rating.toFixed(2)}} / 5
+            Semester: {{details.semester}}
+            Max students no: {{details.maxStudentsNo}}
+            Semester: {{details.semester}}
+        </p>
+        <div id = 'input'>
+            <input #rate type="number" placeholder="Oceń kurs">
+            <button (click) = 'changeRating(rate.value)'>Zatwierdź!</button> 
+        </div>
+        <button (click) = signUpUserOnCourse()>Zapisz sie na kurs!</button>
+        </div>
+<!--<p>ECTS: {{details.ECTS}}
+        Rating: {{details.rating.toFixed(2)}} / 5
+        Semester: {{details.semester}}
+        Max students no: {{details.maxStudentsNo}}
+        Semester: {{details.semester}}</p>
+        <p>Description: {{details.description}}</p> -->
+
+

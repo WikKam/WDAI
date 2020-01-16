@@ -1,0 +1,20 @@
+<div>
+    <app-sign-menu></app-sign-menu>
+    <h1>
+        All Courses
+    </h1>
+    <app-search-form
+    (addSearchParams) = 'addSearchParams($event)'>
+    </app-search-form>
+    <app-course-form 
+    (addCourse) = 'addCourse($event)'
+    ></app-course-form>
+    <div id = 'courseList'>
+    <app-course-item 
+    *ngFor = "let course of filtered()"
+     [course] = "course"
+     [isEven] = "filtered().indexOf(course)%2"
+     (deleteCourse) = "deleteCourse($event)">
+    </app-course-item>
+    </div>
+</div>

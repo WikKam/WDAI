@@ -1,0 +1,26 @@
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+  
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+      
+        <label>
+          ECTS:
+          <input type="text" formControlName="ECTS">
+        </label>
+        <label>
+         Semester:
+         <input type="text" formControlName="semester">
+        </label>
+            
+        <label>
+        Max student no:
+        <input type="text" formControlName="maxStudentsNo">
+        </label>
+        <label>
+         icon:
+        <input type="text" formControlName="icon">
+        </label>
+        <button type="submit" [disabled]="!courseForm.valid">Submit</button>
+</form>

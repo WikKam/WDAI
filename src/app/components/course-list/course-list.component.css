@@ -1,0 +1,4 @@
+
+#courseList :nth-child(even){
+    background-color:lightblue;
+}
