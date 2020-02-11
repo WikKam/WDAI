@@ -6,4 +6,7 @@ export class Course{
     semester:number;
     maxStudentsNo:number;
     icon:string;
+    enrolledUsers:string;
+    amountOfRates:number;
+    ratedBy:string;
 }

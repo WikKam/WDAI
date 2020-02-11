@@ -22,7 +22,6 @@ export class CourseFormComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(){
-    console.log(this.courseForm.value);
     const course = this.courseForm.value;
     this.addCourse.emit(course);
   }

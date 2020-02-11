@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
+import { AngularFireAuth } from "@angular/fire/auth";
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  userName: String;
+  userName: string;
   isSomeoneLogged: boolean;
-  constructor() { }
-  getUserName():Observable<String>{
+  constructor(public auth: AngularFireAuth, public router: Router) { }
+  signOut() {
+    return this.auth.auth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.setIsSomeoneLogged(false);
+      this.setUserName('');
+    })
+  }
+  getUserName():Observable<string>{
     return of(this.userName);
   }
   setUserName(userName){

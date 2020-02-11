@@ -8,7 +8,6 @@ export class CourseFilterPipe implements PipeTransform {
 
   transform(courses:Course[] , /*...args: any[]*/parameters:any): any {
     if(!courses){
-      console.log('!courses');
       return [];
     }
     let filteredCourses:Course[] = [...courses];

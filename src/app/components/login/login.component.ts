@@ -17,14 +17,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  signOut() {
-    return this.auth.auth.signOut().then(() => {
-      localStorage.removeItem('user');
-      this.router.navigate['signIn']
-      this.loginServ.setIsSomeoneLogged(false);
-      this.loginServ.setUserName('');
-    })
-  }
   signInUser(email,password){
     //this.auth.auth.setPersistence(firebase.auth().Auth.Persistence.LOCAL);
     return this.auth.auth.signInWithEmailAndPassword(email,password)
@@ -37,6 +29,6 @@ export class LoginComponent implements OnInit {
   }
   onLoginButtonPressed(){
     console.log('a');
-    this.signInUser(this.loginForm.value.email,this.loginForm.value.password);
+    this.signInUser(this.loginForm.value.email,this.loginForm.value.password).then( () => this.router.navigate(['/']));
   }
 }

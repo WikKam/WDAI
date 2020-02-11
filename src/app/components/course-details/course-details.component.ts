@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { CourseService } from 'src/app/services/course.service';
 import {Course} from '../../models/Course'
 import { LoginService } from 'src/app/services/login.service';
+import { DbService } from 'src/app/services/db.service';
 @Component({
   selector: 'app-course-details',
   templateUrl: './course-details.component.html',
@@ -10,55 +11,55 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class CourseDetailsComponent implements OnInit {
   @Input() details:Course;
- // public details:any;
- // @Output() changeRatingOfCourse: EventEmitter<Course> = new EventEmitter()
-  signedUpMembers: Set<String> = new Set();
   hidden:Boolean = true;
-  amountOfRates:number = 0; 
-  constructor(private route:ActivatedRoute, private courseService:CourseService, private loginService: LoginService) { }
-  onExpand(course){
-    this.hidden = !this.hidden;
-  }
-  getCurrExpand(){
-    if(this.hidden){
-      return {
-        'hiddenInfo': true,
-        'info': false
-      }
-    }
-    else{
-      return {
-        'hiddenInfo': false,
-        'info':true
-      }
-    }
-  }
+  amountOfRates:number = 0;
+  courses:Course[] = [];
+  username:string;
+  constructor(private route:ActivatedRoute, private courseService:CourseService, private loginService: LoginService,
+    private dbService: DbService) {
+    
+     }
   changeRating(rate){
-    this.loginService.getUserName().subscribe(username => {
-      if(this.signedUpMembers.has(username)){
+      if(this.details.ratedBy.includes(this.username)){
+        alert("Już oceniłeś ten kurs!");
+        return;
+      }
+      if(this.details.enrolledUsers.includes(this.username)){
         rate = parseInt(rate);
-        this.details.rating = (this.details.rating*this.amountOfRates + rate)/(++this.amountOfRates)
-        //this.changeRatingOfCourse.emit(this.details);
-        this.courseService.changeRating(this.details.id,this.details.rating);
-       console.log(rate);
+        this.details.rating = (this.details.rating*this.details.amountOfRates + rate)/(++this.details.amountOfRates)
+        this.details.ratedBy += this.username
+        this.dbService.updateRatingData(this.details)
+      }
+      else if(!this.username||this.username == ""){
+        alert("Nie jestes zalogowany!")
       }
       else{
         alert("Nie jesteś zapisany na ten kurs!")
       }
-    })
-  }
+    
+}
   ngOnInit() {
-   let id = this.route.snapshot.paramMap.get('id');
-   /*this.details = this.route.snapshot.data;
-   console.log(this.details);
-   this.courseId = id;*/
-   //this.route.data.subscribe(data => console.log(data));
-  this.courseService.getCourseWithId(id).subscribe(course => this.details = course);
-   //console.log(this.route.snapshot.data);
+    this.dbService.getData('/Kursy').subscribe(courses => {
+      let id = this.route.snapshot.paramMap.get('id');
+      this.courses = courses;
+      this.courses.filter(course => course).forEach(course => {
+        if(course.id.toString() == id)this.details = course;
+      })});
+    this.loginService.getUserName().subscribe(username => this.username = username)
   }
   signUpUserOnCourse(){
-    //trzeba to jakoś dodawać dalej potem
-    this.loginService.getUserName().subscribe(username => this.signedUpMembers.add(username))
+      if(this.details.enrolledUsers.includes(this.username)){
+        alert('jestes juz zapisany!')
+        return;
+      }
+      if(!this.username){
+        alert('nie jesteś zalogowany!')
+        return;
+      }
+      this.dbService.updateCourseMembers(this.details,this.username);
+      this.details.enrolledUsers += `,${this.username}`;
+      alert("Zapisałeś się na kurs!")
+    
   }
 
 }

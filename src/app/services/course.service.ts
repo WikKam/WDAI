@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CourseService {
-
+  courses: Course[];
   constructor() { }
   getCourses():Observable<Course[]>{
     return of(getExampleCourses());
@@ -23,5 +23,7 @@ export class CourseService {
   changeRating(id:number, rating:number):void{
     changeRating(id,rating);
   }
-
+  updateCourses(courses: Course[]){
+    this.courses = courses;
+  }
 }

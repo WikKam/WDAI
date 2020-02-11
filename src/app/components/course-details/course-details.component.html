@@ -1,12 +1,12 @@
 
 <div >
         <p>
-            Name: {{details.name}}
-            ECTS: {{details.ECTS}}
-            Rating: {{details.rating.toFixed(2)}} / 5
-            Semester: {{details.semester}}
-            Max students no: {{details.maxStudentsNo}}
-            Semester: {{details.semester}}
+            Name: {{details?.name}}
+            ECTS: {{details?.ECTS}}
+            Rating: {{details?.rating.toFixed(2)}} / 5
+            Semester: {{details?.semester}}
+            Max students no: {{details?.maxStudentsNo}}
+            Semester: {{details?.semester}}
         </p>
         <div id = 'input'>
             <input #rate type="number" placeholder="Oceń kurs">

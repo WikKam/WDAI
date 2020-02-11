@@ -12,7 +12,6 @@ export class CourseItemComponent implements OnInit {
   @Input()isEven:Boolean;
   @Output() deleteCourse:EventEmitter<Course> = new EventEmitter();
   private hidden = true;
-  private amountOfRates :number = 0; 
   constructor(private courseService:CourseService, private router:Router) { }
   ngOnInit() {
   }
@@ -27,7 +26,6 @@ export class CourseItemComponent implements OnInit {
     this.deleteCourse.emit(course);
   }
   onSelect(course){
-    console.log('a');
-    this.router.navigate(['/details',course.id, course])
+    this.router.navigate(['/details',course.id,course])
   }
 }

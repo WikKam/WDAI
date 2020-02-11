@@ -1,6 +1,10 @@
 <div>
+    <div *ngIf="isSomeoneLogged; else loginAndRegister">
+        <button id = "logout" (click) = logOut()>logout</button>
+        <p id = "loggedUser">Logged user: {{loggedUser}}</p>
+    </div>
+   <ng-template #loginAndRegister>
     <button id = "login" [routerLink]= "['/login']">Login</button>
     <button id = "register" [routerLink]= "['/register']">Register </button>
-    <button id = "logout" (click) = >
-    <p id = "loggedUser">Logged user: {{loggedUser}}</p>
+   </ng-template>
 </div>

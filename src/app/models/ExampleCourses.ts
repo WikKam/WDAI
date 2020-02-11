@@ -7,7 +7,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:30,
-    icon: "assets/courseIcon/WDAI-icon.png"
+    icon: "assets/courseIcon/WDAI-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:2,
     name:'Programowanie Obiektowe',
@@ -15,7 +19,10 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:100,
-    icon: "assets/courseIcon/PO-icon.png"
+    icon: "assets/courseIcon/PO-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
   },{
     id:3,
     name:'Programowanie Funkcyjne',
@@ -23,7 +30,10 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:200,
-    icon: "assets/courseIcon//FP-icon.png"
+    icon: "assets/courseIcon//FP-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
   },{
     id:4,
     name:'Bazy Danych',
@@ -31,7 +41,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:210,
-    icon: "assets/courseIcon//DB-icon.png"
+    icon: "assets/courseIcon//DB-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:5,
     name:'IWIJ',
@@ -39,7 +53,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:100,
-    icon: "assets/courseIcon//IWIJ-icon.png"
+    icon: "assets/courseIcon//IWIJ-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:6,
     name:'Fizyka',
@@ -47,7 +65,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:50,
-    icon: "assets/courseIcon/P-icon.png"
+    icon: "assets/courseIcon/P-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:7,
     name:'RRiR',
@@ -55,7 +77,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:150,
-    icon: "assets/courseIcon/RRiR-icon.png"
+    icon: "assets/courseIcon/RRiR-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:8,
     name:'WF',
@@ -63,7 +89,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:300,
-    icon: "assets/courseIcon/PE-icon.png"
+    icon: "assets/courseIcon/PE-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:9,
     name:'Algorytmy Grafowe',
@@ -71,7 +101,11 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:200,
-    icon: "assets/courseIcon/AG-icon.png"
+    icon: "assets/courseIcon/AG-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
+
   },{
     id:10,
     name:'Algorytmy Geometryczne',
@@ -79,7 +113,10 @@ let exampleCourses:Course[];
     rating:0,
     semester:3,
     maxStudentsNo:200,
-    icon: "assets/courseIcon/AGeo-icon.png"
+    icon: "assets/courseIcon/AGeo-icon.png",
+    enrolledUsers: "",
+    amountOfRates:0,
+    ratedBy: ""
   }];
   export function getExampleCourses():Course[]{
       return exampleCourses;
