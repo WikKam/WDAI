@@ -16,11 +16,11 @@ export class SignMenuComponent implements OnInit {
     this.update();
   }
   logOut() {
-    this.logService.signOut().then( () => this.update());
-    //window.location.reload();
+    this.logService.signOut();
+   // console.log("czemutoniedziala")
   }
   update() {
-    this.logService.getUserName().subscribe(userName => this.loggedUser = userName)
-    this.logService.getIsSomeoneLogged().subscribe(info => this.isSomeoneLogged = info);
+    this.logService.username.subscribe(change => this.loggedUser = change)
+    this.logService.change.subscribe(change => this.isSomeoneLogged = change)
   }
 }

@@ -1,26 +1,42 @@
+<div class = "d-flex justify-content-center bg-primary p-2 rounded " style = "color:white;
+ display:block; margin:auto;">
 <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-  
+  <a (click) = "onClose()">x</a>
+        <div class="form-group submit">
+          <h3 class = "submit">Add new course</h3>
+        </div>
+        <div class="form-group">
         <label>
           Name:
-          <input type="text" formControlName="name">
+          <input class = "form-control" type="text" formControlName="name">
         </label>
-      
+      </div>
+      <div class="form-group">
+
         <label>
           ECTS:
-          <input type="text" formControlName="ECTS">
+          <input class = "form-control" type="text" formControlName="ECTS">
         </label>
+      </div>    
+        <div class="form-group">
         <label>
          Semester:
-         <input type="text" formControlName="semester">
+         <input class = "form-control" type="text" formControlName="semester">
         </label>
+      </div>
+      <div class="form-group">
             
         <label>
         Max student no:
-        <input type="text" formControlName="maxStudentsNo">
+        <input class = "form-control" type="text" formControlName="maxStudentsNo">
         </label>
+      </div>
+      <div  class="form-group">
         <label>
          icon:
-        <input type="text" formControlName="icon">
+        <input class = "form-control" type="text" formControlName="icon">
         </label>
-        <button type="submit" [disabled]="!courseForm.valid">Submit</button>
+      </div>
+        <button class = "btn btn-light submit" type="submit" [disabled]="!courseForm.valid">Submit</button>
 </form>
+</div>

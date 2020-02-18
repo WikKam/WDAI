@@ -1,0 +1,13 @@
+form{
+    width:100%;
+}
+.submit{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+a{
+    cursor: pointer;
+    text-align: right;
+    display: block;
+}

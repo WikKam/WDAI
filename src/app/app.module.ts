@@ -17,9 +17,13 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/register/register.component';
 import { SignMenuComponent } from './components/sign-menu/sign-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     CourseListComponent,
     CourseItemComponent,
     CourseFormComponent,
@@ -29,18 +33,25 @@ import { SignMenuComponent } from './components/sign-menu/sign-menu.component';
     routesComponents,
     LoginComponent,
     RegisterComponent,
-    SignMenuComponent
+    SignMenuComponent,
+    NavbarComponent,
+    WelcomeComponent,
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, // do obsługi autentykacji
     AngularFirestoreModule, // do obslugi baz danych
-    AngularFireDatabaseModule // do obslugi baz danych
+    AngularFireDatabaseModule, // do obslugi baz danych
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[CourseFormComponent]
 })
 export class AppModule { }

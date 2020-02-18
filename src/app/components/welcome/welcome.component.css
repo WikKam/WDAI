@@ -1,0 +1,7 @@
+.welcome{
+    display:block;
+    margin:auto;
+    background-image: url("../../../assets/pictures/bgpic1.jpg") ;
+    height:300px;
+    /*background-position:center;*/
+}

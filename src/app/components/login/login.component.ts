@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('user',JSON.stringify(result))
       this.loginServ.setIsSomeoneLogged(true);
       this.loginServ.setUserName(this.auth.auth.currentUser.email)
+      this.loginServ.signIn();
     })
     .catch(error => console.log(error.message))
   }
   onLoginButtonPressed(){
-    console.log('a');
     this.signInUser(this.loginForm.value.email,this.loginForm.value.password).then( () => this.router.navigate(['/']));
   }
 }

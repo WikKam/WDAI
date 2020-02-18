@@ -1,0 +1,6 @@
+li{
+    cursor: pointer;
+}
+#navbarSupportedContent{
+    transition-duration:  2s;
+}

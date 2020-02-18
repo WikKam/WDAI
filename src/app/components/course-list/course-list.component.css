@@ -1,4 +1,30 @@
 
-#courseList :nth-child(even){
-    background-color:lightblue;
+
+a{
+    cursor: pointer;
+}
+.grid-container{
+    display:grid;
+    grid-template-columns: 31% 31% 31%;
+    justify-items: stretch;
+    grid-gap:2rem;
+    overflow:hidden;
+    position:relative;
+  /*  margin-left:2%;*/
+    justify-content: center;
+}
+@media(max-width:1250px){
+    .grid-container{
+        grid-template-columns: 49% 49%;
+    }
+}
+@media(max-width:885px){
+    .grid-container{
+       display: block;
+       margin:auto;
+    }
+}
+.header{
+    text-align: center;
+    padding: 3%;
 }

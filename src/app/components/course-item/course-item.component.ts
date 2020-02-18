@@ -17,9 +17,19 @@ export class CourseItemComponent implements OnInit {
   }
   setClass() {
     let cssClass = {
-      course: true,
-      'isEven': this.isEven
+      //course: true,
+      'bg-primary': this.isEven,
+      'text-white': this.isEven,
+      'bg-light': !this.isEven,
     };
+    return cssClass;
+  }
+  setButtonClass(){
+    let cssClass = {
+      'btn':true,
+      'btn-primary': !this.isEven,
+      'btn-light':this.isEven
+    }
     return cssClass;
   }
   onDelete(course){

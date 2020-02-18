@@ -1,15 +1,16 @@
 <div>
-    <app-sign-menu></app-sign-menu>
-    <h1>
-        All Courses
-    </h1>
+   <!-- <app-navbar></app-navbar>-->
+    <app-welcome></app-welcome>
     <app-search-form
     (addSearchParams) = 'addSearchParams($event)'>
     </app-search-form>
-    <app-course-form 
+   <!-- <app-course-form 
     (addCourse) = 'addCourse($event)'
-    ></app-course-form>
-    <div id = 'courseList'>
+    ></app-course-form>-->
+    <h1 class = "header">
+        All Courses
+    </h1>
+    <div id = 'courseList' class = "grid-container">
     <app-course-item 
     *ngFor = "let course of filtered()"
      [course] = "course"

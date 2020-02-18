@@ -1,20 +1,33 @@
-<form [formGroup]="searchForm" (keyup)="onKeyUp()">
+<div class = "d-flex justify-content-center bg-primary p-2 rounded mt-5" style = "color:white;">
+  <form [formGroup]="searchForm" (keyup)="onKeyUp()">
+    <div class="form-group">
+      <h3 class = "text-center">Search course</h3>
+    </div>
+    <div class = form-row>
+        <div class="col">
         <label>
           Name:
-          <input type="text" formControlName="name">
+          <input class = "form-control" type="text" formControlName="name">
         </label>
-      
+        </div>
+        <div class="col">
         <label>
           ECTS:
-          <input type="text" formControlName="ECTS">
+          <input class = "form-control" type="text" formControlName="ECTS">
         </label>
+        </div>
+        <div class="col">
         <label>
          Semester:
-         <input type="text" formControlName="semester">
+         <input class = "form-control" type="text" formControlName="semester">
         </label>
-            
+        </div>
+        <div class="col">
         <label>
         Max student no:
-        <input type="text" formControlName="maxStudentsNo">
+        <input class = "form-control" type="text" formControlName="maxStudentsNo">
         </label>
+        </div>
+      </div>
 </form>
+</div>

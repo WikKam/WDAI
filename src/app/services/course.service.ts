@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import {Course} from '../models/Course';
 import {getExampleCourses, addCourse, deleteCourse, getCourse, changeRating} from '../models/ExampleCourses';
 import { Observable, of } from 'rxjs';
@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class CourseService {
   courses: Course[];
+  @Output() change: EventEmitter<any> = new EventEmitter();
   constructor() { }
   getCourses():Observable<Course[]>{
     return of(getExampleCourses());
@@ -25,5 +26,8 @@ export class CourseService {
   }
   updateCourses(courses: Course[]){
     this.courses = courses;
+  }
+  onCourseAdded(course:any){
+    this.change.emit(course);
   }
 }
