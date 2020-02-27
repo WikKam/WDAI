@@ -1,27 +1,4 @@
-.hiddenInfo{
-    
-    transition:max-height 0.5s ease-in;
-    transition-delay: 0ms;
-    background: inherit;
-    display:block;
-    margin:auto;
-    padding:0;
-    max-height: 0;
-    overflow: hidden;
-}
-.info{
-    transition:max-height 0.5s ease-in;
-    background: inherit;
-    display:block;
-    margin:auto;
-    padding:0;
-    max-height:200px;
-    overflow: hidden;
-}
-#expand{
-    display:block;
-    margin:auto;
-}
+
 .hiddenInfo p, .info p {
     text-align:center;
 }
@@ -39,5 +16,9 @@
     display: block;
     margin:auto;
     padding:2%;
-    border-bottom: 1px solid rgb(66,139,202);
+    border-bottom: 1px solid #FB3640;
+}
+.b{
+    background-color: #247BA0;
+    color: whitesmoke;
 }

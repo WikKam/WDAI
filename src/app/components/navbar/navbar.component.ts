@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog"
 import { CourseFormComponent } from '../course-form/course-form.component';
+import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,10 +9,11 @@ import { CourseFormComponent } from '../course-form/course-form.component';
 })
 export class NavbarComponent implements OnInit {
   private disp = document.getElementById("navbarSupportedContent");
-
-  constructor(private dialog: MatDialog) { }
+  isSomeoneLoggedIn = false;
+  constructor(private dialog: MatDialog, private logService: LoginService) { }
   private isExpanded = false
   ngOnInit(): void {
+    this.logService.change.subscribe(loggedIn => this.isSomeoneLoggedIn = loggedIn);
   }
   onClick(){
     const dialogConfig = new MatDialogConfig();

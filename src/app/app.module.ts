@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { MatToolbarModule} from  '@angular/material/toolbar';
+import { LandingComponent } from './components/landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -36,6 +38,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     SignMenuComponent,
     NavbarComponent,
     WelcomeComponent,
+    LandingComponent,
     
 
   ],
@@ -48,7 +51,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     AngularFireAuthModule, // do obsługi autentykacji
     AngularFirestoreModule, // do obslugi baz danych
     AngularFireDatabaseModule, // do obslugi baz danych
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

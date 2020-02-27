@@ -29,6 +29,6 @@ export class LoginComponent implements OnInit {
     .catch(error => console.log(error.message))
   }
   onLoginButtonPressed(){
-    this.signInUser(this.loginForm.value.email,this.loginForm.value.password).then( () => this.router.navigate(['/']));
+    this.signInUser(this.loginForm.value.email,this.loginForm.value.password).then( () => this.router.navigate(['courselist']));
   }
 }

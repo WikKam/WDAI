@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   }
   onRegisterButtonPressed(){
     console.log('a');
-    this.signUpUser(this.registerForm.value.email,this.registerForm.value.password).then(() => this.router.navigate(['/']));
+    this.signUpUser(this.registerForm.value.email,this.registerForm.value.password).then(() => this.router.navigate(['courselist']));
     
   }
 

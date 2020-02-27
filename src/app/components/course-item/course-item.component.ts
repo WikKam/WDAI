@@ -1,11 +1,16 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import {Course} from '../../models/Course'
 import {CourseService} from 'src/app/services/course.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { state, trigger, style, transition,animate } from '@angular/animations';
+
 @Component({
   selector: 'app-course-item',
   templateUrl: './course-item.component.html',
-  styleUrls: ['./course-item.component.css']
+  styleUrls: ['./course-item.component.css'],
+  animations:[
+    
+  ]
 })
 export class CourseItemComponent implements OnInit {
   @Input() course: Course; 
@@ -18,18 +23,10 @@ export class CourseItemComponent implements OnInit {
   setClass() {
     let cssClass = {
       //course: true,
-      'bg-primary': this.isEven,
-      'text-white': this.isEven,
-      'bg-light': !this.isEven,
+      'color1': this.isEven,
+      //'text-white': this.isEven,
+      'color2': !this.isEven,
     };
-    return cssClass;
-  }
-  setButtonClass(){
-    let cssClass = {
-      'btn':true,
-      'btn-primary': !this.isEven,
-      'btn-light':this.isEven
-    }
     return cssClass;
   }
   onDelete(course){

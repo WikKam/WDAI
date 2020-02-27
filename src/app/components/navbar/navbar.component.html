@@ -1,4 +1,4 @@
-<nav class = "navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class = "navbar fixed-top navbar-expand-lg navbar-dark">
     <a class="navbar-brand mr-auto">CourseWiki</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
     (click) = "onExpand()">
@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class = "navbar-nav ml-auto">
-    <li class=" nav-link" (click)='onClick()'>Add Course</li>
+    <li *ngIf="isSomeoneLoggedIn" class=" nav-link" (click)='onClick()'>Add Course</li>
     </ul>
     <app-sign-menu></app-sign-menu>
   </div>

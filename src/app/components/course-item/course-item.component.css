@@ -70,3 +70,19 @@ a{
        margin:auto;
     }
 }
+
+.color1{
+    background: #605F5E;
+}
+.color2{
+    background: #247BA0;
+}
+#item{
+    border-radius: 5px;
+    border: 1px solid #C17C74;
+    color: whitesmoke;
+}
+.b{
+    border-color: #FB3640;
+    background-color: #E2E2E2;
+}

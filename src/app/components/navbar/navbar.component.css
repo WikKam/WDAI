@@ -4,3 +4,7 @@ li{
 #navbarSupportedContent{
     transition-duration:  2s;
 }
+.navbar{
+    background-color:#0A2463;
+    color: whitesmoke;
+}

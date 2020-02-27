@@ -1,5 +1,9 @@
 
 <div>
 <app-navbar></app-navbar>
-<router-outlet (activate)="onActivate($event)"></router-outlet>
+<main [@routeAnimations] = "prepareRoute(outlet)">
+<div id = "test">
+<router-outlet #outlet ="outlet" (activate)="onActivate($event)"></router-outlet>
+</div>
+</main>
 </div>

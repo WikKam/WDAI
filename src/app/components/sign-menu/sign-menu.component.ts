@@ -23,4 +23,10 @@ export class SignMenuComponent implements OnInit {
     this.logService.username.subscribe(change => this.loggedUser = change)
     this.logService.change.subscribe(change => this.isSomeoneLogged = change)
   }
+  onLoginClick(){
+    this.router.navigate(['/login'])
+  }
+  onRegisterClick(){
+    this.router.navigate(['/register'])
+  }
 }
