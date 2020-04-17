@@ -1,5 +1,4 @@
-
-
+/*
 a{
     cursor: pointer;
 }
@@ -11,7 +10,8 @@ a{
     overflow:hidden;
     position:relative;
     padding: 5%;
-  /*  margin-left:2%;*/
+    min-height:700px;
+
     justify-content: center;
 }
 @media(max-width:1250px){
@@ -29,6 +29,33 @@ a{
     text-align: center;
     padding: 3%;
 }
-.container{
-    background-color: #E2E2E2;
+.cont{
+    background-color: rgb(236, 236, 236);
+    width:90%;
+    margin:5%;
+}*/
+.grid-container{
+    padding: 1em;
+    column-count: 4;
+    column-width: 23%;
+    column-gap: 1em;
+}
+@media(max-width: 800px){
+    .grid-container{
+        column-count: 3;
+    }
+}
+@media(max-width: 600px){
+    .grid-container{
+        column-count: 2;
+    }
+}
+@media(max-width: 400px){
+    .grid-container{
+        column-count: 1;
+    }
+}
+#conurseList{
+    display: grid;
+    justify-content: space-around;
 }

@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatToolbarModule} from  '@angular/material/toolbar';
 import { LandingComponent } from './components/landing/landing.component';
+import { LoaderComponent } from './components/loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -39,6 +40,7 @@ import { LandingComponent } from './components/landing/landing.component';
     NavbarComponent,
     WelcomeComponent,
     LandingComponent,
+    LoaderComponent,
     
 
   ],
@@ -56,6 +58,7 @@ import { LandingComponent } from './components/landing/landing.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[CourseFormComponent]
+  entryComponents:[CourseFormComponent],
+  exports: [LoaderComponent]
 })
 export class AppModule { }

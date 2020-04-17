@@ -16,6 +16,18 @@ import { state, trigger, style, transition,animate } from '@angular/animations';
         opacity: 1
       })),
       transition('none => loaded', animate('700ms'))
+    ]),
+    trigger('topLoad',[
+      state('none',style({transform: 'translateY(-200%)'})),
+      state('loaded',style({
+        transform:'translateY(0)'})),
+      transition('none => loaded', animate('700ms'))
+    ]),
+    trigger('botLoad',[
+      state('none',style({transform: 'translateY(200%)'})),
+      state('loaded',style({
+        transform:'translateY(0)'})),
+      transition('none => loaded', animate('700ms'))
     ])
   ]
 })
@@ -23,10 +35,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
   constructor(public router:Router, private ref: ChangeDetectorRef) { }
   isLoaded:string = 'none';
-  onHover(){
-    this.isLoaded = 'loaded';
-    console.log('msg');
-  }
+  
   ngAfterViewInit(){
     this.isLoaded = 'loaded';
     this.ref.detectChanges();

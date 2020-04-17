@@ -8,5 +8,6 @@ export class Course{
     icon:string;
     enrolledUsers:string;
     amountOfRates:number;
+    description:string;
     ratedBy:string;
 }

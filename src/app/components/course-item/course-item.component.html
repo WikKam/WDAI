@@ -1,11 +1,12 @@
-<div id = "item"  [ngClass] = "setClass()" >
-    <a id = 'item3'><button id = 'del'class = "btn" (click) = "onDelete(course)">x</button></a>
 
-<div id = 'container'>
-<div id = 'item1'><img [src] =  "course.icon"></div>
-<div id = 'item2'><h1>{{course.name}}</h1></div>
-</div>
+<div class = "item"  [ngClass] = "setClass()" >
+<a id = 'item3'><button id = 'del'class = "btn" (click) = "onDelete(course)">x</button></a>
+<img [src] =  "course.icon">
+<h1>{{course.name}}</h1>
+<div class = "fter">
+
+<button class = 'b' id = "details" (click) = "onSelect(course)"><span>Details</span></button>
 <!--<app-course-details [details] = "course">
 </app-course-details>-->
-<button class = 'b btn' id = "details" (click) = "onSelect(course)">Details</button>
+</div>
 </div>

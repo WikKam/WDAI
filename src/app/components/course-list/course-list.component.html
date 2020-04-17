@@ -1,4 +1,4 @@
-<div>
+<div id = main>
    <!-- <app-navbar></app-navbar>-->
     <app-search-form
     (addSearchParams) = 'addSearchParams($event)'>
@@ -6,17 +6,11 @@
    <!-- <app-course-form 
     (addCourse) = 'addCourse($event)'
     ></app-course-form>-->
-    <h1 class = "header">
-        All Courses
-    </h1>
-    <div class = "container">
     <div id = 'courseList' class = "grid-container">
-    <app-course-item 
-    *ngFor = "let course of filtered()"
+    <app-course-item *ngFor = "let course of filtered()"
      [course] = "course"
      [isEven] = "filtered().indexOf(course)%2"
      (deleteCourse) = "deleteCourse($event)">
     </app-course-item>
-    </div>
     </div>
 </div>

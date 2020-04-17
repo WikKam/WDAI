@@ -4,12 +4,13 @@
 }
 #input{
     display:flex;
+    margin-top:100em;
     align-items: center;
     justify-content: center;
     background:inherit;
 }
 .main{
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 5%;
 }
 .elem{
@@ -18,7 +19,13 @@
     padding:2%;
     border-bottom: 1px solid #FB3640;
 }
-.b{
-    background-color: #247BA0;
-    color: whitesmoke;
+button{
+ display: inline;
+ margin-left: 2em;  
+}
+.enroll{
+    margin-left: 0;
+}
+.f{
+    margin-left: 5px;
 }

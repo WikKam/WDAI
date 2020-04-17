@@ -5,15 +5,15 @@
             <div class = "elem">ECTS: {{details?.ECTS}}</div>
            <div class = "elem">Rating: {{details?.rating.toFixed(2)}} / 5</div>
             <div class = "elem">Semester: {{details?.semester}}</div>
-           <div class = "elem">Max students no: {{details?.maxStudentsNo}}</div>
+           <div class = "elem">Maximum number of students: {{details?.maxStudentsNo}}</div>
            <div class = "elem">Semester: {{details?.semester}}</div>
+           <div class = "elem">Description: <p>{{details?.description}}</p></div>
         
         <div class="form-row mt-3 mb-3">
-
-            <input class = "form-control col-1 mr-2 ml-1" #rate type="number" placeholder="Oceń kurs">
-            <button class = "btn b" (click) = 'changeRating(rate.value)'>Zatwierdź!</button> 
+            <input class = "f" #rate type="number" placeholder="Rate course">
+            <button class = "b" (click) = 'changeRating(rate.value)'><span>Submit!</span></button> 
         </div>
-        <button class = "btn b" (click) = signUpUserOnCourse()>Zapisz sie na kurs!</button>
+        <button class = "b enroll" (click) = signUpUserOnCourse()><span>Enroll!</span></button>
         </div>
 <!--<p>ECTS: {{details.ECTS}}
         Rating: {{details.rating.toFixed(2)}} / 5

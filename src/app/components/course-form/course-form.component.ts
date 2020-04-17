@@ -15,6 +15,7 @@ export class CourseFormComponent implements OnInit {
     ECTS: new FormControl(''),
     semester:new FormControl(''),
     maxStudentsNo:new FormControl(''),
+    description: new FormControl(''),
     icon:new FormControl(''),
   })
   

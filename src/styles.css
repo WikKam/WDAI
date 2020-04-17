@@ -9,4 +9,42 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
  }
  
+ .b {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    background-color: #0A2463;
+    padding: 17px 60px;
+    margin: 0 auto;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.20);
+  }
+  
+  .b span {
+    position: relative; 
+    z-index: 1;
+  }
+  
+  .b:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #FB3640;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-90%) translateY(-25%) rotate(45deg);
+    transform: translateX(-90%) translateY(-25%) rotate(45deg);
+  }
+  
+  .b:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
 
