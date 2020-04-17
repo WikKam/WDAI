@@ -5,7 +5,6 @@ import {CourseFilterPipe} from '../../pipes/course-filter.pipe'
 import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 import { DbService } from 'src/app/services/db.service';
-import { getCourse } from 'src/app/models/ExampleCourses';
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
