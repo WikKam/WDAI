@@ -1,6 +1,11 @@
 
 <div class = "item"  [ngClass] = "setClass()" >
-<a id = 'item3'><button id = 'del'class = "btn" (click) = "onDelete(course)">x</button></a>
+<a id = 'item3' #del><button 
+    id = 'del'
+    class = "btn" 
+    (click) = "onDelete(course)"
+    [ngStyle] = 'setStyle()'
+    >x</button></a>
 <img [src] =  "course.icon">
 <h1>{{course.name}}</h1>
 <div class = "fter">

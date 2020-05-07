@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Course } from '../models/Course';
 import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +36,8 @@ export class DbService {
   updateMaxID(max:number){
     this.db.object('maxID').update({maxID: max});
   }
+  setUser(user:User){
+   this.db.object('/Users/' + user.userName).set(user); 
+  }
+  
 }

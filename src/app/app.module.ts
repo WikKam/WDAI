@@ -24,6 +24,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatToolbarModule} from  '@angular/material/toolbar';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { RoutescrollDirective } from './routescroll.directive';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -41,6 +42,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     WelcomeComponent,
     LandingComponent,
     LoaderComponent,
+    RoutescrollDirective,
     
 
   ],

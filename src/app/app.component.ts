@@ -13,7 +13,6 @@ import { slider, /*transformer,*/ fader, /*stepper*/ } from './route-animations'
 export class AppComponent {
   title = 'wdai-project';
   onActivate(event){
-    window.scroll(0,0);
   }
   prepareRoute(outlet: RouterOutlet){
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];

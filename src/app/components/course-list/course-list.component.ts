@@ -19,13 +19,13 @@ export class CourseListComponent implements OnInit {
     private loginService:LoginService, private dbService: DbService) { }
   searchParams:any;
   ngOnInit() {
-     this.dbService.getData('Kursy').subscribe(courses => {this.courses = courses
+     this.dbService.getData('Kursy').subscribe(courses => 
+      {this.courses = courses
      this.courseService.updateCourses(this.courses)
      this.loaded=true;
   });
      this.dbService.getData('maxID').subscribe(max => this.highestID = max[0])
      this.courseService.change.subscribe(course => {
-       alert('poszlo!');
        this.addCourse(course);
      })
   }
