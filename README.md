@@ -1,6 +1,16 @@
 # WdaiProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+It is a simple app for managing university courses
+## Functionalities
+Unfortunately, logging and registering doesnt work on github pages, so in order to try them you need to serve this project on localhost.
+
+What is done now:
+- Logging + Registering
+- Adding new course if you are logged in
+- Rating a course (need to be logged in)
+- Deleting a course if you are an admin
+- Searching a course based on parameters
 
 ## Development server
 
